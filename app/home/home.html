@@ -1,0 +1,46 @@
+<md-tabs id="home-tabs" md-dynamic-height md-swipe-content="true" md-selected="home.tabs.selectedIndex">
+  <md-tab id="assignments">
+    <md-tab-label>My Assignments</md-tab-label>
+    <md-tab-body>
+      <md-list>
+        <md-subheader class="md-no-sticky">My unfinished assignments</md-subheader>
+          <md-list-item md-no-ink class="md-2-line" ng-repeat="assignment in home.myAssignments | filter:{completed:false}">
+            <md-checkbox ng-model="assignment._completed" ng-change="home.update(assignment)"></md-checkbox>
+            <div flex="80" class="md-list-item-text">
+              <h3 class="multiline">{{assignment.content}}</h3>
+              <p am-time-ago="assignment.dueDate"></p>
+            </div>
+            <md-icon class="accent-icon" ng-click="home.openChat($event, assignment)">chat</md-icon>
+            <md-divider></md-divider>
+          </md-list-item>
+        <md-subheader class="md-no-sticky">My delagated assignments</md-subheader>
+        <md-list-item md-no-ink class="md-2-line" ng-repeat="assignment in home.delegatedAssignments | filter:{completed:false}">
+          <md-checkbox ng-model="assignment._completed" ng-change="home.update(assignment)"></md-checkbox>
+          <div flex="80" class="md-list-item-text">
+            <h3 class="multiline">{{assignment.content}}</h3>
+            <p am-time-ago="assignment.dueDate"></p>
+          </div>
+          <md-icon class="accent-icon" ng-click="home.openChat($event, assignment)">chat</md-icon>
+          <md-divider></md-divider>
+        </md-list-item>
+      </md-list>
+    </md-tab-body>
+  </md-tab>
+  <md-tab id="discussions">
+    <md-tab-label>My Discussions</md-tab-label>
+    <md-tab-body>
+      <md-list>
+       <md-list-item class="md-3-line" ng-repeat="discussion in home.discussions">
+          <img ng-src="{{discussion.userAvatar}}" class="md-avatar" alt="{{discussion.userName}}" />
+          <div flex="80" class="md-list-item-text">
+            <h3>{{discussion.userName}}</h3>
+            <h4 am-time-ago="discussion.createdDate"></h4>
+            <p>{{discussion.content}}</p>
+          </div>
+          <md-icon class="accent-icon" ng-click="home.openChat($event, assignment)">chat</md-icon>
+          <md-divider></md-divider>
+        </md-list-item>
+      </md-list>
+    </md-tab-body>
+  </md-tab>
+</md-tabs>

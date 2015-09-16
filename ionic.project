@@ -1,0 +1,7 @@
+{
+  "name": "councils",
+  "app_id": "817eddde",
+  "gulpStartupTasks": [
+    "watch"
+  ]
+}

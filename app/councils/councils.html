@@ -1,0 +1,28 @@
+<md-list>
+  <div ng-repeat="council in councils.myCouncils">
+    <md-list-item>
+      <p class="list-item-title">{{council}}</p>
+      <div class="icon-button-secondary">
+        <md-button ui-sref="detail({ council: council, tabIndex: 0 })"
+                    title="Go to Agnendas"
+                    aria-label="Agendas"
+                    class="md-icon-button" >
+          <md-icon>event_note</md-icon>
+        </md-button>
+        <md-button ui-sref="detail({ council: council, tabIndex: 1 })"
+                    title="Go to Assignments"
+                    aria-label="Assignments"
+                    class="md-icon-button" >
+          <md-icon>assignment</md-icon>
+        </md-button>
+        <md-button ui-sref="detail({ council: council, tabIndex: 2 })"
+                    title="Go to Discussions"
+                    aria-label="Discussions"
+                    class="md-icon-button" >
+          <md-icon>chat</md-icon>
+        </md-button>
+      </div>
+    </md-list-item>
+    <md-divider></md-divider>
+  </div>
+</md-list>

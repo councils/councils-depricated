@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!-- WE SHOULD BE HOSTING THIS OURSELVES -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>{%= o.htmlWebpackPlugin.options.title || o.htmlWebpackPlugin.options.pkg.name || 'Webpack App'%}</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-aria.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.0/angular-material.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ionic/1.1.0/js/ionic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ionic/1.1.0/js/ionic-angular.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.1/angular-moment.js"></script>
+
+  </head>
+  <body ng-app="councils">
+    <side-nav-layout>
+      <ui-view name="main" layout-fill layout="column"></ui-view>
+    </side-nav-layout>
+    <!-- {%= o.htmlWebpackPlugin.options.pkg.name + ' v' + o.htmlWebpackPlugin.options.pkg.version + ' built on ' + new Date() %} -->
+  </body>
+</html>

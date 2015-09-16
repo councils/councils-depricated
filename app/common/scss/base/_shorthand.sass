@@ -1,0 +1,126 @@
+// Font Families
+.sans
+  font-family: "Gotham", Arial, Helvetica, sans-serif
+
+.serif
+  font-family: Surveyor, "Palatino Linotype", "Book Antiqua", Palatino, serif
+
+.lighter
+  font-weight: 300
+
+.book
+  font-weight: 400
+
+.medium
+  font-weight: 500
+
+.bold
+  font-weight: 700
+
+// General layout classes
+.full-height
+  height: 100% !important
+
+  &.has-header
+    height: calc(100% - 44px) !important
+
+.db
+  display: block !important
+.di
+  display: inline !important
+.dib
+  display: inline-block !important
+.df
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+.dfc
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+.fl
+  float: left
+.fr
+  float: right
+.fn
+  float: none
+.cl
+  clear: left
+.cr
+  clear: right
+.cb
+  clear: both
+
+// Colors
+$colors: bk #000000, grey3 #333333, grey6 #666666, grey9 #999999, greyA #AAAAAA, greyC #CCCCCC, greyD #DDDDDD, greyE #EEEEEE, cBlue #3c7a99, white #FFFFFF
+@each $kvp in $colors
+  .#{nth($kvp, 1)}
+    color: nth($kvp, 2) !important
+  .#{nth($kvp, 1)}-border
+    border-color: nth($kvp, 2) !important
+
+// Text positioning
+.vac
+  @include vertical-align
+.tac
+  text-align: center !important
+.tal
+  text-align: left !important
+.tar
+  text-align: right !important
+
+
+// Font sizes
+$font-sizes: 10 12 14 16 18 20 22 24 30 36 72
+@each $v in $font-sizes
+  .f#{$v}, .f#{$v}.icon:before
+    font-size: #{$v}px !important
+
+// Line Heights
+@for $i from 5 through 18
+  .lh#{$i*2},
+    line-height: #{$i*2}px !important
+
+
+// Padding
+@for $i from 0 through 8
+  .pad#{$i*10}
+    padding: #{$i*10}px !important
+  .pad#{$i*10}t
+    padding-top: #{$i*10}px !important
+  .pad#{$i*10}b
+    padding-bottom: #{$i*10}px !important
+  .pad#{$i*10}tb
+    padding-bottom: #{$i*10}px !important
+    padding-top: #{$i*10}px !important
+  .pad#{$i*10}l
+    padding-left: #{$i*10}px !important
+  .pad#{$i*10}r
+    padding-right: #{$i*10}px !important
+  .pad#{$i*10}lr
+    padding-left: #{$i*10}px !important
+    padding-right: #{$i*10}px !important
+
+
+// Margin
+.mar0a
+  margin: 0 auto !important
+@for $i from 0 through 8
+  .mar#{$i*10}
+    margin: #{$i*10}px !important
+  .mar#{$i*10}t
+    margin-top: #{$i*10}px !important
+  .mar#{$i*10}b
+    margin-bottom: #{$i*10}px !important
+  .mar#{$i*10}tb
+    margin-bottom: #{$i*10}px !important
+    margin-top: #{$i*10}px !important
+  .mar#{$i*10}l
+    margin-left: #{$i*10}px !important
+  .mar#{$i*10}r
+    margin-right: #{$i*10}px !important
+  .mar#{$i*10}lr
+    margin-left: #{$i*10}px !important
+    margin-right: #{$i*10}px !important

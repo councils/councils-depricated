@@ -1,0 +1,39 @@
+#loadingOverlay
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 100
+  background-color: #FFF
+  opacity: 0.7
+  text-align: center
+  padding-top: 200px
+
+  i
+    @extend .vac
+    @extend .db
+    -webkit-animation: spin 2s linear infinite
+    -moz-animation: spin 2s linear infinite
+    animation: spin 2s linear infinite
+
+  &.hidden
+    display: none
+
+@-moz-keyframes spin
+  from
+    -moz-transform: rotate(0deg)
+  to
+    -moz-transform: rotate(360deg)
+
+@-webkit-keyframes spin
+  from
+    -webkit-transform: rotate(0deg)
+  to
+    -webkit-transform: rotate(360deg)
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)

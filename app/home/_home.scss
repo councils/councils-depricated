@@ -1,0 +1,23 @@
+md-tabs-wrapper {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #dededd;
+}
+
+h3.multiline {
+  line-height: 1.3em !important;
+}
+
+md-list {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background-color: #ffffff;
+
+  .md-subheader {
+    margin-right: 0;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #dededd;
+    .md-subheader-inner {
+      margin-right: 16px;
+    }
+  }
+}

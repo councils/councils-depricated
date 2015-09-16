@@ -1,0 +1,38 @@
+ion-pane
+
+  *[ui-sref]
+    cursor: pointer
+
+  // Page headers
+  > ion-header-bar
+    @extend .serif
+    text-transform: uppercase
+    letter-spacing: 2px
+
+    // Icons by page titles in headers
+    .title:before
+      @extend .f24
+      position: relative
+      top: 2px
+      padding-right: 6px
+
+.mute 
+  color: #CCC;
+
+.scroll
+  min-height: 100%
+
+[nav-view-direction="forward"], [nav-view-direction="back"]
+  background-color: #FFF !important
+
+.hidden-md
+  display: none
+  @include md
+    display: block
+
+.align-left
+  align-self: flex-start;
+
+.align-right
+  align-self: flex-end;
+

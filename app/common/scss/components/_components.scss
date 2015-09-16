@@ -1,0 +1,68 @@
+// Include all components
+
+@import 'discussions';
+@import 'inputs';
+@import 'loading';
+@import 'modals';
+
+@mixin appearance($val) {
+  -webkit-appearance: $val;
+     -moz-appearance: $val;
+          appearance: $val;
+}
+
+.bar.bar-header {
+  border-bottom: 1px solid #dddad7;
+}
+
+.section-header {
+  width: 100%;
+  height: 36px;
+  background-color: rgb(232,232,232);
+  background-color: rgba(232,232,232,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  &.space-around {
+    justify-content: space-around;
+  }
+
+  &.border-top {
+    border-top: 1px solid #dddddd;
+  }
+
+  .title {
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+}
+
+.mobile-select {
+  width: 100%;
+  @include appearance(none);
+  margin-top: 10px;
+  border: none;
+  background: $item-default-bg;
+  color: #333333;
+
+  // hack to hide default dropdown arrow in FF
+  text-indent: 0.01px;
+  text-overflow: '';
+  white-space: nowrap;
+  font-size: $font-size-base;
+  cursor: pointer;
+  direction: ltr; // right align the select text
+}
+
+select::-ms-expand {
+  // hide default dropdown arrow in IE
+  display: none;
+}
+
+option {
+  direction: ltr;
+}

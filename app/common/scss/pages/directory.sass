@@ -1,0 +1,24 @@
+.pane
+  &.directory
+
+    *[ui-sref]
+      cursor: pointer
+
+    // Page headers
+    > ion-header-bar
+      @extend .serif
+      text-transform: uppercase
+      letter-spacing: 2px
+
+    // Icons by page titles in headers
+    .title:before
+      @extend .f24
+      position: relative
+      top: 2px
+      padding-right: 6px
+    .list
+      >.item
+        padding: 0 !important;
+
+    .item-avatar .item-content
+      padding-left: 16px;

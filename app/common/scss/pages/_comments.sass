@@ -1,0 +1,44 @@
+.pane
+  &.comments
+    
+    .has-footer
+      bottom: 0
+    .no-truncate
+      overflow: auto
+      white-space: normal
+
+    .nothing-message
+      padding-top: 60px
+      width: 100%
+      color: #AAA
+
+    .comment-date
+      font-size: 12px
+      color: #AAA
+
+    .message-footer
+      overflow: visible !important
+      height: auto !important
+      
+      textarea
+        @extend .sans
+        resize: none
+        min-height: 25px
+        max-height: 200px
+        margin: 0 !important
+        background: #eee
+        font-size: 14px !important
+
+
+    .footer-btn-wrap
+      height: 100%
+      width: 60px
+
+    .footer-btn
+      text-align: center
+      width: 70px
+      position: absolute !important
+      bottom: 7px
+
+    .bar.item-input-inset .item-input-wrapper input
+      width: 100% !important

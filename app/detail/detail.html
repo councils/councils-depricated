@@ -1,0 +1,75 @@
+<md-tabs id="home-tabs" md-dynamic-height md-swipe-content="true" md-selected="detail.tabs.selectedIndex">
+  <md-tab id="agendas">
+    <md-tab-label>Agendas</md-tab-label>
+    <md-tab-body>
+      <md-content layout="column" layout-padding md-theme="green">
+        <div layout="row">
+          <md-autocomplete flex
+              md-input-name="hymn"
+              md-selected-item="detail.selectedItem"
+              md-search-text="detail.searchText"
+              md-items="hymn in detail.querySearch(detail.searchText)"
+              md-item-text="hymn.name + ' - ' + hymn.number"
+              md-floating-label="Opening Hymn">
+            <md-item-template>
+              <span md-highlight-text="detail.searchText">{{item.name + ' - ' + item.number}}</span>
+            </md-item-template>
+          </md-autocomplete>
+          <md-button ng-disabled="!detail.selectedItem" class="md-icon-button" ng-click="detail.openHymn(detail.selectedItem)"><md-icon>queue_music</md-icon></a>
+        </div>
+        <md-input-container>
+          <label>Opening Prayer</label>
+          <input ng-model="agendas.agenda.openingPrayer">
+        </md-input-container>
+        <md-input-container>
+          <label>Spiritual thought</label>
+          <input ng-model="agendas.agenda.spiritualThought">
+        </md-input-container>
+         <md-input-container>
+          <label>High councilor remarks from...</label>
+          <input ng-model="agendas.agenda.highCouncil">
+        </md-input-container>
+         <md-input-container>
+          <label>Spiritual thought</label>
+          <input ng-model="agendas.agenda.spiritualThought">
+        </md-input-container>
+      </md-content>
+    </md-tab-body>
+  </md-tab>
+  <md-tab id="assignments">
+    <md-tab-label>Assignments</md-tab-label>
+    <md-tab-body>
+      <md-list>
+        <div ng-repeat="assignment in detail.assignments | filter:{completed:false}">
+          <md-list-item md-no-ink class="md-2-line">
+            <md-checkbox ng-model="assignment._completed" ng-change="detail.update(assignment)"></md-checkbox>
+            <div class="md-list-item-text">
+              <h3>{{assignment.content}}</h3>
+              <p am-time-ago="assignment.dueDate"></p>
+            </div>
+          </md-list-item>
+          <md-divider></md-divider>
+        </div>
+      </md-list>
+    </md-tab-body>
+  </md-tab>
+  <md-tab id="discussions">
+    <md-tab-label>Discussions</md-tab-label>
+    <md-tab-body>
+      <md-list>
+        <div ng-repeat="discussion in detail.discussions">
+          <md-list-item class="md-3-line">
+            <img ng-src="{{discussion.userAvatar}}" class="md-avatar" alt="{{discussion.userName}}" />
+            <div class="md-list-item-text">
+              <h3>{{discussion.userName}}</h3>
+              <h4 am-time-ago="discussion.createdDate"></h4>
+              <p>{{discussion.content}}</p>
+            </div>
+            <md-icon class="accent-icon">chat</md-icon>
+          </md-list-item>
+          <md-divider></md-divider>
+        </div>
+      </md-list>
+    </md-tab-body>
+  </md-tab>
+</md-tabs>

@@ -1,0 +1,110 @@
+.animate-switch-container
+  max-width: 500px
+
+  .animate-switch
+    position: fixed
+    width: 100%
+    padding: 0 30px
+    left: 0
+    right: 0
+    transition: 0.25s transform
+
+    &.ng-enter
+      transform: translate3d(500px,0,0)
+      &.ng-enter-active
+        transform: translate3d(0,0,0)
+    &.ng-leave
+      transform: translate3d(0,0,0)
+      &.ng-leave-active
+        transform: translate3d(-500px,0,0)
+
+.full-height
+  height: 100vh
+  transition: height 0.25s
+
+  &.small
+    height: 50vh !important
+
+.welcome, .setup, .login
+  background-color: #2D435E
+  color: #fff
+
+  .slider
+    min-height: 200px
+    width: 100%
+    color: #fff
+    text-align: center
+
+    p
+      margin-top: 10px
+      font-size: 16px
+
+    .slider-pager-page
+      color: #fff
+
+    .slider-pager
+      color: #fff
+      width: 100vw
+
+  .button-container
+    margin: 0
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-around
+    width: 100%
+    position: absolute
+    bottom: 0
+
+    button.button
+      display: inline-block
+      width: 45%
+      text-transform: uppercase
+      letter-spacing: 1px
+      border-radius: 4px
+
+    button.negative
+      color: $positive
+
+  .login-slider
+    z-index: 999
+    background-color: #fff
+    position: fixed
+    height: 375px
+    width: 100%
+    bottom: 0
+    padding: 30px
+    color: #444
+    -webkit-transform: translate3d(0, 375px, 0)
+    transform: translate3d(0, 375px, 0)
+    transition: transform 0.25s
+
+    &.open
+      -webkit-transform: translate3d(0, 0, 0)
+      transform: translate3d(0, 0, 0)
+
+    .title
+      color: #444
+      text-align: center
+      font-size: 14px
+      text-transform: uppercase
+      letter-spacing: 1px
+      margin-bottom: 20px
+
+  .login-input
+    padding: 20px
+    border: 1px solid #ddd
+    border-radius: 4px
+    margin-bottom: 10px
+    letter-spacing: 1px
+
+  .button-clear
+    min-height: 24px
+    max-height: 32px
+    margin: 10
+
+  .button-round
+    font-size: 14px
+    border-radius: 4px
+    text-transform: uppercase
+    letter-spacing: 1px

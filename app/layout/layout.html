@@ -1,0 +1,46 @@
+<div class="layout-container" layout-fill layout="column">
+  <section layout="row" flex>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2 grey-side-nav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+      <div class="status-bar no-fill"></div>
+      <header class="nav-header">
+        <a ng-href="#/" class="user-img" href="#/">
+          <img class="profile-img img-round" ng-src="{{user.profileImage}}" alt="{{user.preferredName}}">
+          <h1 class="nametype md-heading">{{user.fname}} {{user.lname}}</h1>
+        </a>
+      </header>
+      <md-content>
+        <md-list class="menu-item-list">
+          <div ng-repeat="item in navItems">
+            <md-list-item ng-click="item.onClick()">
+              <md-icon class="accent-icon">{{item.icon}}</md-icon>
+              <p>{{item.name}}</p>
+            </md-list-item>
+            <md-divider ></md-divider>
+          </div>
+        </md-list>
+      </md-content>
+    </md-sidenav>
+    <div layout-fill layout="column" flex>
+      <div class="status-bar"></div>
+      <md-toolbar layout="row" class="white">
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button hide-gt-md" aria-label="Menu" ng-click="toggleLeft()">
+              <md-icon> menu </md-icon>
+            </md-button>
+            <h2>
+              <span>{{title}}</span>
+            </h2>
+            <span flex></span>
+            <!-- <md-button class="md-icon-button" aria-label="Favorite">
+              <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="More">
+              <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+            </md-button> -->
+          </div>
+      </md-toolbar>
+      <div class="content-area" ng-transclude></div>
+    </div>
+  </section>
+</div>
+
