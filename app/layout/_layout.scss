@@ -1,43 +1,51 @@
+@import '../common/scss/common';
+
 .layout-container {
   width: 100%;
   height: 100%;
+  background-color: $light-grey;
 }
 
-.grey-side-nav {
-  background-color: rgba(255, 255, 255, 0.95);
+.layout-section {
+  overflow: auto;
 }
 
-@supports (-webkit-backdrop-filter: none) {
-  .grey-side-nav {
-    background-color: rgba(255, 255, 255, 0.8);
-    -webkit-backdrop-filter: blur(10px) saturate(50%);
-  }
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main-sidenav {
+  background-color: $light-grey;
 }
 
 .nav-header {
-  flex-shrink: 0;
+  position: absolute;
+  background-color: $green;
+  top: 0px;
+  width: 100%;
   z-index: 2;
+  &.status-bar {
+    padding-top: 10px;
+  }
 }
 
-a.user-img {
-  border-bottom: none;
-  text-decoration: none;
+.user-info {
+  padding: 0;
 }
-
-.user-img {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 32px 0 16px;
-  margin: 0 auto;
-}
-
 .nametype {
-  color: #414141;
-  text-align: center;
-  font-weight: 600;
   font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0px;
+  padding-left: 16px;
+}
+
+.menu-items {
+  margin-top: 134px;
+  background-color: #fff;
 }
 
 .img-round {
@@ -50,27 +58,146 @@ a.user-img {
 }
 
 .accent-icon {
-  color: #1ead8a;
+  color: $green;
+}
+.white-icon {
+  color: #fff;
+}
+
+.over-content {
+  position:fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
 }
 
 md-toolbar.white {
-  background-color: #ffffff;
   border-bottom: 1px solid #dededd;
+  background-color: #ffffff;
+}
+md-toolbar.status-bar {
+  margin-top: 10px;
+
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    width: 100%;
+    background-color: $green;
+  }
 }
 
 .profile-img {
-  max-width: 128px;
-  border: 1px solid #414141;
+  margin: 16px 16px 0px;
+  max-width: 64px;
+  border: 1px solid #fff;
+}
+
+.status-bar.no-fill {
+  background-color: rgba(255, 255, 255, 0);
+}
+.menu-item, .menu-item .md-list-item-inner {
+  min-height: 44px;
+}
+
+.menu-item-list {
+  .menu-item {
+    &.active {
+      background-color: rgba($green, 0.05);
+    }
+  }
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: auto;
+  background-color: $light-grey;
+}
+
+#main-sidenav {
+  background-color: $light-grey;
+}
+.content-area {
+  overflow: auto;
+}
+
+.fixed-layer-1 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.fixed-layer-2 {
+  position: fixed;
+  top: 72px;
+  width: 100%;
+}
+.scroll-layer-2 {
+  margin-top: 64px;
+  width: 100%;
+}
+.scroll-layer-3 {
+  margin-top: 72px + 48px;
+  width: 100%;
+}
+
+.small {
+  max-width: 32px;
+  max-height: 32px;
 }
 
 .status-bar {
-  width: 100%;
-  height: 10px;
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
-
-  &.no-fill {
-    background-color: rgba(255, 255, 255, 0);
+  .menu-items {
+    margin-top: 144px;
+  }
+  .fixed-layer-2 {
+    position: fixed;
+    top: 82px;
+    width: 100%;
+  }
+  .scroll-layer-2 {
+    margin-top: 74px;
+    width: 100%;
+  }
+  .scroll-layer-3 {
+    margin-top: 82px + 48px;
+    width: 100%;
   }
 }
+
+@media only screen and (max-width: 600px) and (min-width: 0) {
+  .fixed-layer-2 {
+    position: fixed;
+    top: 62px;
+    width: 100%;
+  }
+  .scroll-layer-2 {
+    margin-top: 54px;
+    width: 100%;
+  }
+  .scroll-layer-3 {
+    margin-top: 62px + 48px;
+    width: 100%;
+  }
+  .status-bar {
+    .fixed-layer-2 {
+      position: fixed;
+      top: 72px;
+      width: 100%;
+    }
+    .scroll-layer-2 {
+      margin-top: 64px;
+      width: 100%;
+    }
+    .scroll-layer-3 {
+      margin-top: 72px + 48px;
+      width: 100%;
+    }
+  }
+}
+
+
+

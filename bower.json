@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "ionic": "driftyco/ionic-bower#1.1.0"
+  },
+  "devDependencies": {
+    "ionic-service-core": "~0.1.10"
   }
 }

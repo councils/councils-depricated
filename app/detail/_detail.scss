@@ -1,3 +1,9 @@
-md-tab-content {
-  background-color: #ffffff;
+ .no-border {
+  md-tabs-wrapper {
+    border: none;
+  }
+ }
+
+.paper {
+  padding: 32px;
 }

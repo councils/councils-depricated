@@ -16,21 +16,58 @@ $royal:                           #8a6de9 !default;
 $dark:                            #444 !default;
 */
 
-$positive: #3c7a99 !default;
-$font-family-sans-serif: 'Gotham', 'Helvetica Neue', 'Roboto', 'Segoe UI', sans-serif !default;
-$font-family-light-sans-serif: 'Gotham-Light', 'HelveticaNeue-Light', 'Roboto-Light', 'Segoe UI-Light', sans-serif-light !default;
-$font-family-serif: 'Surveyor', serif !default;
-$font-family-monospace: monospace !default;
+// $positive: #3c7a99 !default;
+// $font-family-sans-serif: 'Gotham', 'Helvetica Neue', 'Roboto', 'Segoe UI', sans-serif !default;
+// $font-family-light-sans-serif: 'Gotham-Light', 'HelveticaNeue-Light', 'Roboto-Light', 'Segoe UI-Light', sans-serif-light !default;
+// $font-family-serif: 'Surveyor', serif !default;
+// $font-family-monospace: monospace !default;
+
+$layout-breakpoint-sm:     600px !default;
+$layout-breakpoint-md:     960px !default;
+$layout-breakpoint-lg:     1200px !default;
 
 /* The path for our ionicons font files, relative to the built CSS in www/css */
-$ionicons-font-path: '../bower_components/ionic/fonts' !default;
+// $ionicons-font-path: '../bower_components/ionic/fonts' !default;
+// bernina,
+$font-family: Roboto, 'Helvetica Neue', sans-serif !default;
 
 /* @import "../bower_components/ionic/scss/ionic"; */
 @import '../node_modules/angular-material/angular-material.scss';
+@import './common/scss/common';
+@import './common/fonts/fonts';
 
 html,
 body {
-  /* font-family: $font-family-sans-serif; */
   color: #414141;
-  background-color: #f8f8f8;
+  background-color: $green;
+  font-family: $font-family;
+}
+
+.mute {
+  color: rgba(0,0,0,0.54) !important;
+}
+
+.no-mute {
+  color: rgba(0,0,0,0.87) !important;
+}
+
+.sans {
+  font-family: 'bernina';
+}
+.serif {
+  font-family: 'freight';
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.margin-on-md {
+  margin: 0px 8px 66px;
+}
+
+@media (min-width: $layout-breakpoint-sm) {
+  .margin-on-md {
+    margin: 0px 72px 66px;
+  }
 }

@@ -15,9 +15,8 @@ module.exports = (angular) => {
             controller: 'CouncilsCtrl',
             controllerAs: 'councils',
             resolve: {
-              currentAuth: /* @ngInject */ function() {
-                // return Auth.$requireAuth();
-                return { uid: 'simplelogin:6' };
+              currentAuth: /* @ngInject */ function(Auth) {
+                return Auth.$requireAuth();
               }
             }
           }

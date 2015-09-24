@@ -26,6 +26,7 @@
 		"after": false,
 		"afterEach": false,
 		"inject": false,
-    "Firebase": false
+    "Firebase": false,
+    "cordova": false
   }
 }

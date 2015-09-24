@@ -1,0 +1,6 @@
+pod 'Firebase', '>= 2.3.3'
+link_with 'Councils', 'Councils-watch Extension'
+
+
+
+

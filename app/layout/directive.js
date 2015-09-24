@@ -1,66 +1,52 @@
 module.exports = function (ngModule) {
   'use strict';
 
-  ngModule.directive('sideNavLayout', ($rootScope, $mdUtil, $mdSidenav, $log, $state) => {
+  ngModule.directive('sideNavLayout', ($rootScope, $mdUtil, $mdSidenav, $state) => {
     return {
       restrict: 'E',
       transclude: true,
       template: require('./layout.html'),
       link: (scope, element, attrs) => {
-        scope.toggleLeft = buildToggler('left');
-        scope.close = function () {
-          $mdSidenav('left').close()
-            .then(function () {
-              $log.debug('close LEFT is done');
+
+        if (cordova && cordova.platformId === 'ios') {
+          angular.element('#councilsApp').addClass('status-bar');
+          angular.element('#topBar').addClass('status-bar');
+          angular.element('.nav-header').addClass('status-bar');
+        }
+
+        setMenuItems();
+
+        scope.close = function (state) {
+          $state.go(state)
+            .then(() => {
+              $mdSidenav('left').close();
             });
         };
 
-        scope.navItems = [{
-          name: 'Home',
-          icon: 'home',
-          onClick: goTo('home')
-        }, {
-          name: 'Councils',
-          icon: 'people_outline',
-          onClick: goTo('councils')
-        }, {
-          name: 'Settings',
-          icon: 'settings',
-          onClick: goTo('settings')
-        }, {
-          name: 'Feeback',
-          icon: 'chat_bubble_outline',
-          onClick: () => {
-            // do something.
-          }
-        }, {
-          name: 'Sync',
-          icon: 'sync',
-          onClick: () => {
-            // do something.
-          }
-        }];
-
-        function goTo (state) {
-          return () => {
-            return $state.go(state)
-              .then(() => $mdSidenav('left').close());
-          };
-        }
-
-        /**
-         * Build handler to open/close a SideNav; when animation finishes
-         * report completion in console
-         */
-        function buildToggler(navID) {
-          var debounceFn =  $mdUtil.debounce(function(){
-                $mdSidenav(navID)
-                  .toggle()
-                  .then(function () {
-                    $log.debug(`toggle ${navID} is done`);
-                  });
-              }, 200);
-          return debounceFn;
+        function setMenuItems () {
+          // scope.$applyAsync(() => {
+            scope.navItems = [{
+              name: 'Home',
+              icon: 'home',
+              state: 'home'
+            }, {
+              name: 'Councils',
+              icon: 'people_outline',
+              state: 'councils'
+            }, {
+              name: 'Settings',
+              icon: 'settings',
+              state: '#'
+            }, {
+              name: 'Feeback',
+              icon: 'feedback',
+              state: 'feedback'
+            }, {
+              name: 'Sync',
+              icon: 'sync',
+              state: '#'
+            }];
+          // });
         }
       }
     };

@@ -22,13 +22,14 @@ module.exports = function (ngModule) {
     }
 
     function set (uid) {
-      var ref = new Firebase('https://councilsapp.firebaseio.com/users/' + uid);
+      var ref = new Firebase(`https://councilsapp.firebaseio.com/users/${uid}`);
       return $firebaseObject(ref).$loaded()
         .then((home) => {
           unit = home.$value;
           ngModule.value('UNITNUMBER', unit);
+          ngModule.value('UID', uid);
           home.$destroy();
-          var ref2 = new Firebase('https://councilsapp.firebaseio.com/'+unit+'/users/' + uid);
+          var ref2 = new Firebase(`https://councilsapp.firebaseio.com/${unit}/users/${uid}/info`);
           return $firebaseObject(ref2).$loaded();
         })
         .then((ref) => {

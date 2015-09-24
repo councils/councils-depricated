@@ -9,11 +9,17 @@ module.exports = (angular) => {
       .state('detail', {
         title: 'Details',
         url: '/detail/:council?tabIndex',
+        navType: 'back',
         views: {
           'main' : {
             template: require('./detail.html'),
             controller: 'DetailCtrl',
             controllerAs: 'detail',
+            resolve: {
+              currentAuth: /* @ngInject */ function(Auth) {
+                return Auth.$requireAuth();
+              }
+            }
           }
         }
       });

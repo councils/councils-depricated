@@ -2,16 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1,
+    maximum-scale=1, user-scalable=0, height=device-height, width=device-width"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline' 'unsafe-eval'">
     <!-- WE SHOULD BE HOSTING THIS OURSELVES -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <title>{%= o.htmlWebpackPlugin.options.title || o.htmlWebpackPlugin.options.pkg.name || 'Webpack App'%}</title>
+    <script type="text/javascript" src="cordova.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-touch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-sanitize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-aria.js"></script>
@@ -25,7 +29,7 @@
   </head>
   <body ng-app="councils">
     <side-nav-layout>
-      <ui-view name="main" layout-fill layout="column"></ui-view>
+      <ui-view name="main" class="main-content scroll-layer-2"></ui-view>
     </side-nav-layout>
     <!-- {%= o.htmlWebpackPlugin.options.pkg.name + ' v' + o.htmlWebpackPlugin.options.pkg.version + ' built on ' + new Date() %} -->
   </body>

@@ -1,12 +1,15 @@
-<md-tabs id="home-tabs" md-dynamic-height md-swipe-content="true" md-selected="detail.tabs.selectedIndex">
+<md-tabs id="detail-tabs" class="border-bottom" md-dynamic-height md-swipe-content="true" md-selected="detail.tabs.selectedIndex">
   <md-tab id="agendas">
     <md-tab-label>Agendas</md-tab-label>
     <md-tab-body>
-      <md-content layout="column" layout-padding md-theme="green">
+      <md-tabs md-swipe-content md-no-disconnect md-no-ink-bar md-center-tabs class="no-border" md-selected="detail.weekIndex">
+        <md-tab ng-repeat="week in detail.weeks" label="{{week.title}}"></md-tab>
+      </md-tabs>
+      <div class="paper bg-white margin-on-md md-whiteframe-z1">
         <div layout="row">
           <md-autocomplete flex
               md-input-name="hymn"
-              md-selected-item="detail.selectedItem"
+              md-selected-item="agenda.openingHymn"
               md-search-text="detail.searchText"
               md-items="hymn in detail.querySearch(detail.searchText)"
               md-item-text="hymn.name + ' - ' + hymn.number"
@@ -15,61 +18,100 @@
               <span md-highlight-text="detail.searchText">{{item.name + ' - ' + item.number}}</span>
             </md-item-template>
           </md-autocomplete>
-          <md-button ng-disabled="!detail.selectedItem" class="md-icon-button" ng-click="detail.openHymn(detail.selectedItem)"><md-icon>queue_music</md-icon></a>
+          <md-button ng-disabled="!agenda.openingHymn" class="md-icon-button" ng-click="detail.openHymn(agenda.openingHymn)">
+            <md-icon>queue_music</md-icon>
+          </md-button>
         </div>
         <md-input-container>
-          <label>Opening Prayer</label>
-          <input ng-model="agendas.agenda.openingPrayer">
+          <label>Opening prayer</label>
+          <input ng-model="agenda.openingPrayer" />
         </md-input-container>
         <md-input-container>
           <label>Spiritual thought</label>
-          <input ng-model="agendas.agenda.spiritualThought">
+          <input ng-model="agenda.spiritualThought" />
         </md-input-container>
          <md-input-container>
           <label>High councilor remarks from...</label>
-          <input ng-model="agendas.agenda.highCouncil">
+          <textarea ng-model="agenda.highCouncil"></textarea>
         </md-input-container>
-         <md-input-container>
-          <label>Spiritual thought</label>
-          <input ng-model="agendas.agenda.spiritualThought">
+        <md-input-container>
+          <label>Review assignments</label>
+          <textarea ng-model="agenda.assignments"></textarea>
         </md-input-container>
-      </md-content>
+        <md-input-container>
+          <label>Spiritual welfare</label>
+          <textarea ng-model="agenda.spiritualWelfare"></textarea>
+        </md-input-container>
+        <md-input-container>
+          <label>Temporal Welfare</label>
+          <textarea ng-model="agenda.temporalWelfare"></textarea>
+        </md-input-container>
+        <md-input-container>
+          <label>Fellowship</label>
+          <textarea ng-model="agenda.fellowship"></textarea>
+        </md-input-container>
+        <md-input-container>
+          <label>Missionary</label>
+          <textarea ng-model="agenda.missionary"></textarea>
+        </md-input-container>
+        <md-input-container>
+          <label>Events</label>
+          <textarea ng-model="agenda.events"></textarea>
+        </md-input-container>
+        <md-input-container>
+          <label>Closing prayer</label>
+          <input ng-model="agenda.closingPrayer" />
+        </md-input-container>
+      </div>
     </md-tab-body>
   </md-tab>
   <md-tab id="assignments">
     <md-tab-label>Assignments</md-tab-label>
     <md-tab-body>
-      <md-list>
-        <div ng-repeat="assignment in detail.assignments | filter:{completed:false}">
-          <md-list-item md-no-ink class="md-2-line">
-            <md-checkbox ng-model="assignment._completed" ng-change="detail.update(assignment)"></md-checkbox>
-            <div class="md-list-item-text">
-              <h3>{{assignment.content}}</h3>
-              <p am-time-ago="assignment.dueDate"></p>
+      <div class="margin-on-md">
+        <md-subheader class="transparent md-no-sticky">Ordered by date created</md-subheader>
+        <md-list class="chat-list md-whiteframe-z1">
+          <md-list-item md-no-ink class="md-2-line" ng-repeat="assignment in detail.assignments | filter:{completed:false}">
+            <md-checkbox ng-model="assignment._completed" ng-change="detail.update($event, assignment)"></md-checkbox>
+            <div class="md-list-item-text" layout="row" layout-align="space-between center">
+              <div flex class="left">
+                <h3 class="multiline">{{assignment.content}}</h3>
+                <p am-time-ago="assignment.dueDate"></p>
+              </div>
+              <md-button class="right md-icon-button" aria-label="Chat" ng-click="detail.openChat($event, assignment)">
+                <md-icon class="accent-icon" >chat</md-icon>
+              </md-button>
             </div>
+            <md-divider></md-divider>
           </md-list-item>
-          <md-divider></md-divider>
-        </div>
-      </md-list>
+        </md-list>
+      </div>
     </md-tab-body>
   </md-tab>
   <md-tab id="discussions">
     <md-tab-label>Discussions</md-tab-label>
     <md-tab-body>
-      <md-list>
-        <div ng-repeat="discussion in detail.discussions">
-          <md-list-item class="md-3-line">
+      <div class="margin-on-md">
+        <md-subheader class="transparent md-no-sticky">Ordered by date created</md-subheader>
+        <md-list class="chat-list md-whiteframe-z1">
+          <md-list-item md-no-ink class="md-3-line md-no-proxy" ng-repeat="discussion in detail.discussions">
             <img ng-src="{{discussion.userAvatar}}" class="md-avatar" alt="{{discussion.userName}}" />
-            <div class="md-list-item-text">
-              <h3>{{discussion.userName}}</h3>
-              <h4 am-time-ago="discussion.createdDate"></h4>
-              <p>{{discussion.content}}</p>
+            <div class="md-list-item-text" layout="row" layout-align="space-between center">
+              <div flex>
+                <h3>{{discussion.userName}}</h3>
+                <h4 class="multiline">{{discussion.content}}</h4>
+                <p am-time-ago="discussion.createdDate"></p>
+              </div>
+              <div>
+                <md-button class="right md-icon-button" aria-label="Chat" ng-click="detail.openChat($event, discussion)">
+                  <md-icon class="accent-icon" >chat</md-icon>
+                </md-button>
+              </div>
             </div>
-            <md-icon class="accent-icon">chat</md-icon>
+            <md-divider></md-divider>
           </md-list-item>
-          <md-divider></md-divider>
-        </div>
-      </md-list>
+        </md-list>
+      </div>
     </md-tab-body>
   </md-tab>
 </md-tabs>
