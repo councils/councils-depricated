@@ -1,0 +1,12 @@
+<p class="login-instructions">Login with LDS.org account to sign up</p>
+<form ng-submit="login.signup()">
+  <md-input-container>
+    <label>Username</label>
+    <input type="text" ng-model="login.lds.name" />
+  </md-input-container>
+  <md-input-container>
+    <label>Password</label>
+    <input type="password" ng-model="login.lds.pass" />
+  </md-input-container>
+  <md-button md-theme="green" class="md-primary md-raised">Login to LDS.org</md-button>
+</form>

@@ -1,0 +1,30 @@
+<div class="chat-modal open" layout="column">
+   <md-toolbar md-theme="green" layout="row" class="md-whiteframe-z2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Exit Chat" ng-click="close()">
+          <md-icon>clear</md-icon>
+        </md-button>
+        <span flex class="title truncate">{{title}}</span>
+      </div>
+  </md-toolbar>
+  <div class="time-bar"></div>
+  <md-content class="chats transparent">
+    <md-list class="list transparent">
+      <md-list-item ng-repeat="chat in chats" class="md-3-line transparent">
+        <img ng-class="{hidden: chat.author === chats[$index-1].author}" ng-src="{{chat.profileImage}}" class="md-avatar face" alt="{{chat.author}}" />
+        <div class="md-list-item-text" layout="column">
+          <h4 class="mute" ng-show="chat.author !== chats[$index-1].author">{{chat.authorName}}</h4>
+          <p class="whitespace no-mute">{{chat.message}}</p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
+  <div class="message-input-contianer" md-theme="green">
+    <form layout="row">
+      <md-button class="md-fab md-mini md-primary" flex-order="2" aria-label="Send Message" ng-click="send(message)">
+        <md-icon cass="accent-icon">send</md-icon>
+      </md-button>
+      <textarea class="message-input" flex flex-order="1" ng-model="message" type="text" placeholder="Message"></textarea>
+    </form>
+  </div>
+</div>

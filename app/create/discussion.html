@@ -1,0 +1,18 @@
+<div class="margin-on-md">
+  <md-subheader class="transparent md-no-sticky">Create a new discussion</md-subheader>
+  <div class="paper bg-white md-whiteframe-z1">
+    <form>
+      <md-input-container>
+        <label>Discussion Topic</label>
+        <textarea ng-model="create.discussion.topic"></textarea>
+      </md-input-container>
+      <md-input-container>
+        <label>Select a council</label>
+        <md-select ng-model="create.discussion.council">
+          <md-option ng-repeat="council in create.councils" value="{{council}}">{{council}}</md-option>
+        </md-select>
+      </md-input-container>
+      <md-button md-theme="green" class="md-primary md-raised" ng-click="create.createDiscussion(create.discussion)">Create</md-button>
+    </form>
+  </div>
+</div>

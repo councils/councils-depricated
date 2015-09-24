@@ -1,0 +1,34 @@
+<div class="margin-on-md">
+  <md-subheader class="transparent md-no-sticky">Create a new assignment</md-subheader>
+  <div class="paper bg-white md-whiteframe-z1">
+    <form>
+      <md-input-container>
+        <label>Assignment</label>
+        <textarea ng-model="create.assignment.content"></textarea>
+      </md-input-container>
+      <md-autocomplete
+          md-input-name="Select a person"
+          md-selected-item="create.assignment.assignedTo"
+          md-search-text="create.searchText"
+          md-items="person in create.querySearch(create.searchText)"
+          md-item-text="person.info.fname + ' ' + person.info.lname"
+          md-floating-label="Select a person">
+        <md-item-template>
+          <img ng-src="{{item.info.profileImage}}" class="user-avatar" alt="{{item.info.preferredName}}" />
+          <span class="user-name" md-highlight-text="create.searchText">{{item.info.fname + ' ' + item.info.lname}}</span>
+        </md-item-template>
+      </md-autocomplete>
+      <md-input-container>
+        <label>Select a council</label>
+        <md-select ng-model="create.assignment.council">
+          <md-option ng-repeat="council in create.councils" value="{{council}}">{{council}}</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+        <label>Due date</label>
+        <input type="date" ng-model="create.assignment.dueDate" />
+      </md-input-container>
+      <md-button md-theme="green" class="md-primary md-raised" ng-click="create.createAssignment(create.assignment)">Create</md-button>
+    </form>
+  </div>
+</div>

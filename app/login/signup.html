@@ -1,0 +1,12 @@
+<p class="login-instructions">Create a Council's account.</p>
+<form ng-submit="login.create()">
+  <md-input-container>
+    <label>Email</label>
+    <input type="email" ng-model="login.signup.email" />
+  </md-input-container>
+  <md-input-container>
+    <label>Create password</label>
+    <input type="password" ng-model="login.signup.pass" />
+  </md-input-container>
+  <md-button md-theme="green" class="md-primary md-raised">Create Account</md-button>
+</form>

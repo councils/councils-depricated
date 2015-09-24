@@ -1,0 +1,134 @@
+{
+  "538469": {
+    "Bishopric": {
+      "agendas": {
+        "Week 40": {}
+      },
+      "assignments": {
+        "id": {
+          "assignedBy": "simplelogin:7",
+          "assignedByName": "Mckay Randall",
+          "assignedTo": "simplelogin:6",
+          "assignedToName": "Nick Randall",
+          "completed": false,
+          "content": "Will you help setup chairs on sunday?",
+          "dueDate": 1439740211783
+        }
+      },
+      "discussions": {
+        "id": {
+          "content": "Brother Keller needs a job. Any ideas?",
+          "createdBy": "simplelogin:7",
+          "createdDate": 1439267868823,
+          "userAvatar": "https://res.cloudinary.com/hgzoysu4o/image/upload/c_thumb,g_face,h_250,w_250/v1439768192/councils_3744679520.png",
+          "userName": "McKay Randall"
+        }
+      },
+      "threads": {
+        "123345": {
+          "author": "simplelogin:7",
+          "authorName": "Nick Randall",
+          "date": 1439740211783,
+          "message": "This is a test messsage.",
+          "profileImage": "https://res.cloudinary.com/hgzoysu4o/image/upload/c_thumb,g_face,h_250,w_250/v1439767739/councils_3744678537.png"
+        }
+      }
+    },
+    "members": [{
+      "directoryName": "Adams, William",
+      "email": "william.adams4@gmail.com",
+      "formattedName": "Adams, William",
+      "givenName1": "William Ramsey",
+      "individualId": 6479500531,
+      "memberId": "",
+      "phone": "801-918-1406",
+      "photoUrl": "",
+      "preferredName": "Adams, William",
+      "surname": "Adams"
+    }],
+    "users": {
+      "simplelogin:6": {
+        "assignments": {
+          "-JwQ171uuMdD2FrOtnAH": {
+            "council": "Bishopric",
+            "key": "-JwQ16w9QLrAbkqVCKtC"
+          }
+        },
+        "discussions": {
+          "-JwQ171uuMdD2FrOtnAH": {
+            "council": "Bishopric",
+            "key": "-JwQ16w9QLrAbkqVCKtC"
+          }
+        },
+        "info": {
+          "callingName": "Assistant Execuitive Secretary",
+          "directoryName": "Randall, Nick",
+          "email": "Nicksrandall@gmail.com",
+          "fname": "Nick",
+          "formattedName": "Randall, Nick",
+          "givenName1": "Nicholas Stratton",
+          "groupName": "Bishopric",
+          "homeUnitNbr": 538469,
+          "individualId": 3744678537,
+          "lname": "Randall",
+          "phone": "480  371-5213",
+          "photoUrl": "",
+          "preferredName": "Randall, Nick",
+          "profileImage": "https://res.cloudinary.com/hgzoysu4o/image/upload/c_thumb,g_face,h_250,w_250/v1439767739/councils_3744678537.png",
+          "surname": "Randall"
+        },
+        "tokens": {
+          "9F81E173-E3A1-4436-BAF9-2D722DA57738" : {
+            "platform" : "ios",
+            "token" : "bc73ab2abb232c58e1b8b0ced0315d3e0cc40c27230c8c0699f779f0de607939"
+          }
+        }
+      },
+      "simplelogin:7": {
+        "assignments": {
+          "-JwQ171uuMdD2FrOtnAH": {
+            "council": "Bishopric",
+            "key": "-JwQ16w9QLrAbkqVCKtC"
+          },
+          "-JwQ1SFSMI5ZjMAgFytr": {
+            "council": "Bishopric",
+            "key": "-JwQ1S63gnuHWBXnibES"
+          },
+          "-Jwtt27vObTWJbbuBaVe": {
+            "council": "Bishopric",
+            "key": "-Jwtt270n2hM60cEWmcD"
+          }
+        },
+        "discussions": {
+          "-Jwtt27vObTWJbbuBaVe": {
+            "council": "Bishopric",
+            "key": "-Jwtt270n2hM60cEWmcD"
+          }
+        },
+        "info": {
+          "directoryName": "Randall, McKay",
+          "email": "mckayrandall@myldsmail.net",
+          "fname": "McKay",
+          "formattedName": "Randall, McKay",
+          "givenName1": "McKay Allen",
+          "homeUnitNbr": 538469,
+          "individualId": 3744679520,
+          "lname": "Randall",
+          "phone": "480-295-0993",
+          "preferredName": "Randall, McKay",
+          "profileImage": "https://res.cloudinary.com/hgzoysu4o/image/upload/c_thumb,g_face,h_250,w_250/v1439768192/councils_3744679520.png",
+          "surname": "Randall"
+        },
+        "tokens": {
+          "9F81E173-E3A1-4436-BAF9-2D722DA57738" : {
+            "platform" : "ios",
+            "token" : "bc73ab2abb232c58e1b8b0ced0315d3e0cc40c27230c8c0699f779f0de607939"
+          }
+        }
+      }
+    }
+  },
+  "users": {
+    "simplelogin:6": 538469
+  }
+}

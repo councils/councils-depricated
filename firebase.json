@@ -1,0 +1,9 @@
+{
+  "firebase": "councilsapp",
+  "public": "www",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

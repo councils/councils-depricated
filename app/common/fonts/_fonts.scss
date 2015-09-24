@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'freight';
+    src: url('common/fonts/freigtexprobook-webfont.eot');
+    src: url('common/fonts/freigtexprobook-webfont.eot?#iefix') format('embedded-opentype'),
+         url('common/fonts/freigtexprobook-webfont.woff2') format('woff2'),
+         url('common/fonts/freigtexprobook-webfont.woff') format('woff'),
+         url('common/fonts/freigtexprobook-webfont.ttf') format('truetype'),
+         url('common/fonts/freigtexprobook-webfont.svg#freighttext_probook') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'freight';
+    src: url('common/fonts/freigtexprolig-webfont.eot');
+    src: url('common/fonts/freigtexprolig-webfont.eot?#iefix') format('embedded-opentype'),
+         url('common/fonts/freigtexprolig-webfont.woff2') format('woff2'),
+         url('common/fonts/freigtexprolig-webfont.woff') format('woff'),
+         url('common/fonts/freigtexprolig-webfont.ttf') format('truetype'),
+         url('common/fonts/freigtexprolig-webfont.svg#freighttext_prolight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bernina';
+    src: url('common/fonts/berninasans-bold-webfont.eot');
+    src: url('common/fonts/berninasans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('common/fonts/berninasans-bold-webfont.woff2') format('woff2'),
+         url('common/fonts/berninasans-bold-webfont.woff') format('woff'),
+         url('common/fonts/berninasans-bold-webfont.ttf') format('truetype'),
+         url('common/fonts/berninasans-bold-webfont.svg#bernina_sansbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bernina';
+    src: url('common/fonts/berninosans-regular-webfont.eot');
+    src: url('common/fonts/berninosans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('common/fonts/berninosans-regular-webfont.woff2') format('woff2'),
+         url('common/fonts/berninosans-regular-webfont.woff') format('woff'),
+         url('common/fonts/berninosans-regular-webfont.ttf') format('truetype'),
+         url('common/fonts/berninosans-regular-webfont.svg#bernino_sansregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bernina';
+    src: url('common/fonts/berninosans-semibold-webfont.eot');
+    src: url('common/fonts/berninosans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('common/fonts/berninosans-semibold-webfont.woff2') format('woff2'),
+         url('common/fonts/berninosans-semibold-webfont.woff') format('woff'),
+         url('common/fonts/berninosans-semibold-webfont.ttf') format('truetype'),
+         url('common/fonts/berninosans-semibold-webfont.svg#bernino_sanssemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}

@@ -1,0 +1,46 @@
+<div class="full-screen">
+  <md-tabs id="login-tabs" md-center-tabs class="border-top" md-selected="login.tabs.selectedIndex" md-align-tabs="bottom">
+    <md-tab id="signup">
+      <md-tab-label>Sign up</md-tab-label>
+      <md-tab-body>
+        <div class="form-container" layout="column" layout-align="center center">
+          <img class="login-logo" ng-src="{{login.logoURL}}" />
+          <span class="logo-name">Councils</span>
+          <span class="logo-tagline">Stake & Ward productivity on a simple intuitive app</span>
+          <md-content class="form-content bg-white md-whiteframe-z1">
+            <div class="mini-loading-spinner" ng-if="login.loading" layout="column" layout-align="center center">
+              <div class="md-whiteframe-z2 round bg-white">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+              </div>
+            </div>
+            <div class="slide-animate" ng-include="login.template"></div>
+          </md-content>
+        </div>
+      </md-tab-body>
+    </md-tab>
+    <md-tab id="login">
+      <md-tab-label>Login</md-tab-label>
+      <md-tab-body>
+        <div class="form-container" layout="column" layout-align="center center">
+          <img class="login-logo" ng-src="{{login.logoURL}}" />
+          <span class="logo-name">Councils</span>
+          <span class="logo-tagline">Stake & Ward productivity on a simple intuitive app</span>
+          <md-content class="form-content bg-white md-whiteframe-z1" >
+            <p class="login-instructions">Login using Councils Account</p>
+            <form ng-submit="login.login()">
+              <md-input-container>
+                <label>Email</label>
+                <input type="email" ng-model="login.credentials.email" />
+              </md-input-container>
+              <md-input-container>
+                <label>Password</label>
+                <input type="password" ng-model="login.credentials.password" />
+              </md-input-container>
+              <md-button md-theme="green" class="md-primary md-raised">Login to Councils</md-button>
+            </form>
+          </md-content>
+        </div>
+      </md-tab-body>
+    </md-tab>
+  </md-tabs>
+</div>
