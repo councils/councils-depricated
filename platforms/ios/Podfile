@@ -1,6 +1,15 @@
-pod 'Firebase', '>= 2.3.3'
-link_with 'Councils', 'Councils-watch Extension'
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
 
+target 'Councils' do
+    pod 'Firebase', '>= 2.3.3'
+end
 
+target 'Councils-watch' do
+    pod 'Firebase', '>= 2.3.3'
+end
 
+target 'Councils-watch Extension' do
+    pod 'Firebase', '>= 2.3.3'
+end
 
