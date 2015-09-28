@@ -59,7 +59,12 @@ module.exports = function (ngModule) {
       myAssignments.on('child_added', (snapshot) => {
         var assignment = snapshot.val();
         var aref = ref.child(`${assignment.council}/assignments/${assignment.key}`);
-        home.myAssignments.push($firebaseObject(aref));
+        $firebaseObject(aref).$loaded()
+          .then((assignmentData) => {
+            assignmentData.hasBeenViewed = true;
+            assignmentData.$save();
+            home.myAssignments.push(assignmentData);
+          });
       });
 
       delagatedAssignments.on('child_added', (snapshot) => {

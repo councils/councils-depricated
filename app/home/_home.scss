@@ -6,9 +6,18 @@
   }
 }
 
+.seen {
+  padding-left: 8px;
+}
+
 .multiline {
   line-height: 1.3em !important;
 }
+
+.material-icons.md-18 { font-size: 18px; width: 18px; height: 18px; }
+.material-icons.md-24 { font-size: 24px; width: 24px; height: 24px; }
+.material-icons.md-36 { font-size: 36px; width: 36px; height: 36px; }
+.material-icons.md-48 { font-size: 48px; width: 48px; height: 48px; }
 
 .chat-list {
   md-list-item.md-no-proxy, md-list-item .md-no-style {

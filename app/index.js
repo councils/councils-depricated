@@ -36,6 +36,7 @@ var appModule = module.exports = angular
     require('./detail')(angular).name,
     require('./create')(angular).name,
     require('./feedback')(angular).name,
+    require('./settings')(angular).name,
     require('./login')(angular).name
   ])
 
@@ -136,8 +137,10 @@ var appModule = module.exports = angular
     $mdDialog,
     $ionicUser,
     $ionicPush,
+    $cordovaTouchID,
     $ionicAnalytics
   ) => {
+    var isAuthenticated = false;
 
     $ionicAnalytics.register();
     $log.debug('app module - run');
@@ -145,6 +148,23 @@ var appModule = module.exports = angular
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
+
+    // $cordovaTouchID.checkSupport().then(function() {
+    //   // success, TouchID supported
+    //   $cordovaTouchID.authenticate('message').then(function() {
+    //     // success
+    //     var isAuthenticated = true;
+    //   }, function () {
+    //     // error
+    //     var isAuthenticated = false;
+    //     $state.go('login');
+    //   });
+    // }, function (error) {
+    //   // TouchID not supported
+    //   $log.debug('no touchID support');
+    //   var isAuthenticated = true;
+    // });
+
 
     $rootScope.logout = function (ev) {
       var confirm = $mdDialog.confirm()

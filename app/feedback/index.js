@@ -9,11 +9,11 @@ module.exports = (angular) => {
       .state('feedback', {
         url: '/feedback',
         title: 'Feedback',
-        controller: 'FeedbackCtrl',
-        controllerAs: 'feedback',
         views: {
           'main' : {
-            template: require('./feedback.html')
+            template: require('./feedback.html'),
+            controller: 'FeedbackCtrl',
+            controllerAs: 'feedback'
           }
         }
       });

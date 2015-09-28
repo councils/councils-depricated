@@ -25,6 +25,7 @@ module.exports = function (ngModule) {
         assignedTo: assignment.assignedTo.$id,
         assignedToName: `${assignment.assignedTo.info.fname} ${assignment.assignedTo.info.lname}`,
         completed: false,
+        hasBeenViewed: false,
         content: assignment.content,
         dueDate: assignment.dueDate.getTime()
       };

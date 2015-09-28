@@ -4,13 +4,19 @@
     <md-tab-body>
       <div class="margin-on-md">
         <md-subheader class="transparent md-no-sticky">My unfinished assignments</md-subheader>
-        <md-list class="chat-list md-whiteframe-z1">
+        <md-list class="chat-list">
           <md-list-item md-no-ink class="md-2-line" ng-repeat="assignment in home.myAssignments | filter:{completed:false}">
             <md-checkbox ng-model="assignment._completed" ng-change="home.update($event, assignment)"></md-checkbox>
             <div class="md-list-item-text" layout="row" layout-align="space-between center">
               <div flex class="left">
-                <h3 class="multiline">{{assignment.content}}</h3>
-                <p am-time-ago="assignment.dueDate"></p>
+                <h3 class="multiline serif">{{assignment.content}}</h3>
+                <p layout="row">
+                  <span am-time-ago="assignment.dueDate"></span>
+                  <span class="seen" ng-if="assignment.hasBeenViewed">
+                    <md-tooltip>Seen</md-tooltip>
+                    <md-icon class="material-icons md-light md-18">remove_red_eye</md-icon>
+                  <span>
+                </p>
               </div>
               <md-button class="right md-icon-button" aria-label="Chat" ng-click="home.openChat($event, assignment)">
                 <md-icon class="accent-icon" >chat</md-icon>
@@ -20,13 +26,19 @@
           </md-list-item>
         </md-list>
         <md-subheader class="transparent md-no-sticky">My delagated assignments</md-subheader>
-        <md-list class="chat-list md-whiteframe-z1">
+        <md-list class="chat-list">
           <md-list-item md-no-ink class="md-2-line" ng-repeat="assignment in home.delegatedAssignments | filter:{completed:false}">
             <md-checkbox ng-model="assignment._completed" ng-change="home.update($event, assignment)"></md-checkbox>
             <div class="md-list-item-text" layout="row" layout-align="space-between center">
               <div flex class="left">
-                <h3 class="multiline">{{assignment.content}}</h3>
-                <p am-time-ago="assignment.dueDate"></p>
+                <h3 class="multiline serif">{{assignment.content}}</h3>
+                <p>
+                  <span am-time-ago="assignment.dueDate"></span>
+                  <span class="seen" ng-if="assignment.hasBeenViewed">
+                    <md-tooltip>Seen</md-tooltip>
+                    <md-icon class="material-icons md-light md-18">remove_red_eye</md-icon>
+                  <span>
+                </p>
               </div>
               <md-button class="right md-icon-button" aria-label="Chat" ng-click="home.openChat($event, assignment)">
                 <md-icon class="accent-icon" >chat</md-icon>
@@ -43,13 +55,13 @@
     <md-tab-body>
       <div class="margin-on-md">
         <md-subheader class="transparent md-no-sticky">Ordered by date created</md-subheader>
-        <md-list class="chat-list md-whiteframe-z1">
+        <md-list class="chat-list">
           <md-list-item class="md-3-line md-no-proxy" ng-repeat="discussion in home.discussions">
             <img ng-src="{{discussion.userAvatar}}" class="md-avatar" alt="{{discussion.userName}}" />
             <div class="md-list-item-text" layout="row" layout-align="space-between center">
               <div flex>
                 <h3>{{discussion.userName}}</h3>
-                <h4 class="multiline">{{discussion.content}}</h4>
+                <h4 class="multiline serif">{{discussion.content}}</h4>
                 <p am-time-ago="discussion.createdDate"></p>
               </div>
               <div>

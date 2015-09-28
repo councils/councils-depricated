@@ -75,7 +75,7 @@
             <md-checkbox ng-model="assignment._completed" ng-change="detail.update($event, assignment)"></md-checkbox>
             <div class="md-list-item-text" layout="row" layout-align="space-between center">
               <div flex class="left">
-                <h3 class="multiline">{{assignment.content}}</h3>
+                <h3 class="multiline serif">{{assignment.content}}</h3>
                 <p am-time-ago="assignment.dueDate"></p>
               </div>
               <md-button class="right md-icon-button" aria-label="Chat" ng-click="detail.openChat($event, assignment)">
@@ -99,7 +99,7 @@
             <div class="md-list-item-text" layout="row" layout-align="space-between center">
               <div flex>
                 <h3>{{discussion.userName}}</h3>
-                <h4 class="multiline">{{discussion.content}}</h4>
+                <h4 class="multiline serif">{{discussion.content}}</h4>
                 <p am-time-ago="discussion.createdDate"></p>
               </div>
               <div>

@@ -8,7 +8,7 @@ module.exports = function (ngModule) {
       template: require('./layout.html'),
       link: (scope, element, attrs) => {
 
-        if (cordova && cordova.platformId === 'ios') {
+        if (window.cordova && window.cordova.platformId === 'ios') {
           angular.element('#councilsApp').addClass('status-bar');
           angular.element('#topBar').addClass('status-bar');
           angular.element('.nav-header').addClass('status-bar');
@@ -36,7 +36,7 @@ module.exports = function (ngModule) {
             }, {
               name: 'Settings',
               icon: 'settings',
-              state: '#'
+              state: 'settings'
             }, {
               name: 'Feeback',
               icon: 'feedback',

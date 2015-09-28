@@ -3,11 +3,34 @@
 .layout-container {
   width: 100%;
   height: 100%;
-  background-color: $light-grey;
 }
 
 .layout-section {
   overflow: auto;
+}
+
+md-toolbar.glass {
+  @include glass();
+  color: $grey;
+  border-bottom: 1px solid $border-color;
+  .md-button {
+    color: $grey;
+  }
+  md-icon {
+    color: $grey;
+  }
+}
+
+#primary-action {
+  @include glass();
+  color: $grey;
+}
+
+.md-is-open {
+  #primary-action {
+    background-color: rgba(255,255,255,0) !important;
+    box-shadow: none;
+  }
 }
 
 .truncate {
@@ -18,15 +41,16 @@
 }
 
 .main-sidenav {
-  background-color: $light-grey;
+  @include glass();
 }
 
 .nav-header {
   position: absolute;
-  background-color: $green;
+  background-color: transparent;
   top: 0px;
   width: 100%;
   z-index: 2;
+  border-bottom: 1px solid $border-color;
   &.status-bar {
     padding-top: 10px;
   }
@@ -38,13 +62,13 @@
 .nametype {
   font-size: 18px;
   font-weight: 600;
-  color: #fff;
+  color: $grey;
   margin: 0px;
   padding-left: 16px;
 }
 
 .menu-items {
-  margin-top: 134px;
+  margin-top: 136px;
   background-color: #fff;
 }
 
@@ -118,9 +142,11 @@ md-toolbar.status-bar {
 }
 
 #main-sidenav {
-  background-color: $light-grey;
+  @include glass();
 }
+
 .content-area {
+  background-color: $light-grey;
   overflow: auto;
 }
 

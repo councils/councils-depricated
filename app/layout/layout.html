@@ -5,13 +5,13 @@
 </div>
 <div id="councilsApp" class="layout-container" layout-fill layout="column">
   <section class="layout-section" layout="row" flex>
-    <md-sidenav id="main-sidenav" class="md-sidenav-left md-whiteframe-z1" md-component-id="left" md-is-locked-open="$mdMedia('gt-lg')">
-      <header class="nav-header md-whiteframe-z1">
+    <md-sidenav id="main-sidenav" class="md-sidenav-left md-whiteframe-z1" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+      <header class="nav-header">
         <img class="profile-img img-round" ng-src="{{user.profileImage}}" alt="{{user.preferredName}}">
         <div class="user-info" layout="row" layout-align="space-between center">
           <h1 flex class="nametype md-heading">{{user.fname}} {{user.lname}}</h1>
           <md-button class="md-icon-button" aria-label="Logout" ng-click="logout()">
-            <md-icon class="white-icon">power_settings_new</md-icon>
+            <md-icon>power_settings_new</md-icon>
           </md-button>
         </div>
       </header>
@@ -34,7 +34,7 @@
       </md-content>
     </md-sidenav>
     <div class="content-area" layout-fill layout="column" flex>
-      <md-toolbar id="topBar" layout="row" class="md-whiteframe-z1 fixed-layer-1">
+      <md-toolbar id="topBar" layout="row" class="glass fixed-layer-1">
           <div class="md-toolbar-tools">
             <md-button class="md-icon-button hide-gt-lg" aria-label="Menu" ng-click="toggleLeft()">
               <md-icon>{{navIcon}}</md-icon>
@@ -46,9 +46,9 @@
           </div>
       </md-toolbar>
       <div layout="column" ng-transclude></div>
-      <md-fab-toolbar flex md-theme="green" md-direction="left" class="over-content">
+      <md-fab-toolbar flex md-theme="white" md-direction="left" class="over-content">
         <md-fab-trigger>
-          <md-button aria-label="Create" class="md-fab md-primary">
+          <md-button id="primary-action" aria-label="Create" class="md-fab md-primary">
             <md-icon>add</md-icon>
           </md-button>
         </md-fab-trigger>

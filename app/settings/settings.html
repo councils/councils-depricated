@@ -1,0 +1,12 @@
+<div class="margin-on-md">
+  <md-subheader class="transparent md-no-sticky">User specific Settings?</md-subheader>
+  <md-content class="bg-white md-whiteframe-z1">
+    <md-list>
+      <md-list-item>
+        <md-icon>security</md-icon>
+        <p>Enable TouchID (iOS)</p>
+        <md-switch class="md-primary" ng-model="settings.touchID.$value" ng-change="settings.updateTouchID()"></md-switch>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</div>

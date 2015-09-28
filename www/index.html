@@ -3,13 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, minimum-scale=1,
-    maximum-scale=1, user-scalable=0, height=device-height, width=device-width">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src * &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;; style-src * &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;">
+    maximum-scale=1, user-scalable=0, height=device-height, width=device-width"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline' 'unsafe-eval'">
     <!-- WE SHOULD BE HOSTING THIS OURSELVES -->
-    <link href="https://fonts.googleapis.com/icon?family=Material%20Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <title>councils</title>
-    <script type="text/javascript" src="cordova.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
@@ -25,12 +24,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ionic/1.1.0/js/ionic-angular.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.1/angular-moment.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
 
   </head>
   <body ng-app="councils">
     <side-nav-layout>
       <ui-view name="main" class="main-content scroll-layer-2"></ui-view>
     </side-nav-layout>
-    <!-- councils v1.0.0 built on Thu Sep 24 2015 12:32:37 GMT-0600 (MDT) -->
+    <!-- councils v1.0.0 built on Sun Sep 27 2015 18:17:36 GMT-0600 (MDT) -->
   <script src="index.js"></script></body>
 </html>
