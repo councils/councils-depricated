@@ -46,13 +46,13 @@ md-toolbar.glass {
 
 .nav-header {
   position: absolute;
-  background-color: transparent;
+  background-color: white;
   top: 0px;
   width: 100%;
   z-index: 2;
   border-bottom: 1px solid $border-color;
   &.status-bar {
-    padding-top: 10px;
+    padding-top: 20px;
   }
 }
 
@@ -100,7 +100,7 @@ md-toolbar.white {
   background-color: #ffffff;
 }
 md-toolbar.status-bar {
-  margin-top: 10px;
+  margin-top: 20px;
 
   &:before {
     content: '';
@@ -108,9 +108,9 @@ md-toolbar.status-bar {
     top: 0;
     left: 0;
     right: 0;
-    height: 10px;
+    height: 20px;
     width: 100%;
-    background-color: $green;
+    @include glass();
   }
 }
 
@@ -130,8 +130,16 @@ md-toolbar.status-bar {
 .menu-item-list {
   .menu-item {
     &.active {
-      background-color: rgba($green, 0.05);
+      background-color: rgba(0, 0, 0, 0.05);
     }
+  }
+}
+
+md-backdrop {
+  left: 0;
+  &.md-sidenav-backdrop {
+    transition: all 450ms;
+    left: 300px;
   }
 }
 
@@ -177,19 +185,19 @@ md-toolbar.status-bar {
 
 .status-bar {
   .menu-items {
-    margin-top: 144px;
+    margin-top: 154px;
   }
   .fixed-layer-2 {
     position: fixed;
-    top: 82px;
+    top: 92px;
     width: 100%;
   }
   .scroll-layer-2 {
-    margin-top: 74px;
+    margin-top: 84px;
     width: 100%;
   }
   .scroll-layer-3 {
-    margin-top: 82px + 48px;
+    margin-top: 92px + 48px;
     width: 100%;
   }
 }
@@ -211,15 +219,15 @@ md-toolbar.status-bar {
   .status-bar {
     .fixed-layer-2 {
       position: fixed;
-      top: 72px;
+      top: 82px;
       width: 100%;
     }
     .scroll-layer-2 {
-      margin-top: 64px;
+      margin-top: 74px;
       width: 100%;
     }
     .scroll-layer-3 {
-      margin-top: 72px + 48px;
+      margin-top: 82px + 48px;
       width: 100%;
     }
   }

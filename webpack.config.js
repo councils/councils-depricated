@@ -82,7 +82,7 @@ var config = {
     root: [
       path.join(__dirname, 'app'),
       path.join(__dirname, 'bower_components'),
-      path.join(__dirname, 'node_modules'),
+      path.join(__dirname, 'node_modules')
     ],
     moduleDirectories: [
       'bower_components',

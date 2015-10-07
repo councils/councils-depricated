@@ -1,14 +1,15 @@
 module.exports = function (ngModule) {
   'use strict';
 
-  ngModule.directive('sideNavLayout', ($rootScope, $mdUtil, $mdSidenav, $state) => {
+  ngModule.directive('sideNavLayout', ($rootScope, $mdUtil, $mdSidenav, $state, PLATFORM) => {
     return {
       restrict: 'E',
       transclude: true,
       template: require('./layout.html'),
       link: (scope, element, attrs) => {
 
-        if (window.cordova && window.cordova.platformId === 'ios') {
+        console.log(PLATFORM);
+        if (PLATFORM === 'iOS') {
           angular.element('#councilsApp').addClass('status-bar');
           angular.element('#topBar').addClass('status-bar');
           angular.element('.nav-header').addClass('status-bar');

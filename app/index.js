@@ -42,6 +42,7 @@ var appModule = module.exports = angular
 
   .constant('version', require('../package.json').version)
   .constant('_', require('lodash'))
+  .constant('PLATFORM', window.device ? device.platform : 'dev')
 
   .config(function ($compileProvider, $urlRouterProvider, $mdThemingProvider, $ionicAppProvider) {
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);

@@ -69,5 +69,9 @@ body {
 @media (min-width: $layout-breakpoint-sm) {
   .margin-on-md {
     margin: 0px 72px 66px;
+
+    .chat-list {
+      border-radius: 4px;
+    }
   }
 }
