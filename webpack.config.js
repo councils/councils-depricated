@@ -35,7 +35,12 @@ var config = {
     loaders: [{
       test: /\.js?$/,
       exclude: /(node_modules|bower_components)/,
-      loader: 'babel?stage=0&optional=runtime'
+      loader: 'babel',
+      query: {
+        // https://github.com/babel/babel-loader#options
+        cacheDirectory: true,
+        presets: ['es2015', 'stage-2']
+      }
     }, {
       test   : /\.html$/,
       exclude: /(node_modules|bower_components)/,
