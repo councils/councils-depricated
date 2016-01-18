@@ -51,14 +51,16 @@ md-toolbar.glass {
   width: 100%;
   z-index: 2;
   border-bottom: 1px solid $border-color;
+  text-align: center;
   &.status-bar {
     padding-top: 20px;
   }
 }
 
 .user-info {
-  padding: 0;
+  padding: 12px 12px 20px 12px;
 }
+
 .nametype {
   font-size: 18px;
   font-weight: 600;
@@ -68,7 +70,7 @@ md-toolbar.glass {
 }
 
 .menu-items {
-  margin-top: 136px;
+  margin-top: 180px;
   background-color: #fff;
 }
 
@@ -116,7 +118,7 @@ md-toolbar.status-bar {
 
 .profile-img {
   margin: 16px 16px 0px;
-  max-width: 64px;
+  max-width: 100px;
   border: 1px solid #fff;
 }
 

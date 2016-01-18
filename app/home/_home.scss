@@ -59,3 +59,35 @@ md-list {
 .round {
   border-radius: 99px;
 }
+
+
+.discussion-item {
+  display: block;
+
+  .md-avatar {
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    border-radius: 50%;
+    box-sizing: content-box;
+  }
+
+  .user-name {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .item-time {
+    font-size: 14px;
+    margin: 0;
+    color: #AEAEAE;
+  }
+}
+
+button.right {
+  color: $green;
+  margin-left: 0px;
+  padding-left: 0px;
+}

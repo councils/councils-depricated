@@ -1,3 +1,6 @@
+# DEPRICATED
+USE THIS REPO: https://github.com/councils/councils-app
+
 # Councils Hybrid App
 More info coming soon.
 
@@ -8,4 +11,4 @@ More info coming soon.
 - `$ cordova run android` - deploys compiled app to android device (via USB)
 - `$ cordova emulate ios` - run ios emulator
 
-To deploy to IOS device, open the `/platforms/ios/Councils.xcodeproj` in xcode and then deploy to 
+To deploy to IOS device, open the `/platforms/ios/Councils.xcodeproj` in xcode and then deploy to

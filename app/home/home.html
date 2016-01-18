@@ -12,10 +12,6 @@
                 <h3 class="multiline serif">{{assignment.content}}</h3>
                 <p layout="row">
                   <span am-time-ago="assignment.dueDate"></span>
-                  <span class="seen" ng-if="assignment.hasBeenViewed">
-                    <md-tooltip>Seen</md-tooltip>
-                    <md-icon class="material-icons md-light md-18">remove_red_eye</md-icon>
-                  <span>
                 </p>
               </div>
               <md-button class="right md-icon-button" aria-label="Chat" ng-click="home.openChat($event, assignment)">
@@ -56,21 +52,23 @@
       <div class="margin-on-md">
         <md-subheader class="transparent md-no-sticky">Ordered by date created</md-subheader>
         <md-list class="chat-list">
-          <md-list-item class="md-3-line md-no-proxy" ng-repeat="discussion in home.discussions">
-            <img ng-src="{{discussion.userAvatar}}" class="md-avatar" alt="{{discussion.userName}}" />
-            <div class="md-list-item-text" layout="row" layout-align="space-between center">
+          <md-list-item class="discussion-item md-no-proxy" ng-repeat="discussion in home.discussions">
+            <div flex layout="row" layout-align="center center">
+              <img ng-src="{{discussion.userAvatar}}" class="md-avatar" alt="{{discussion.userName}}" />
               <div flex>
-                <h3>{{discussion.userName}}</h3>
-                <h4 class="multiline serif">{{discussion.content}}</h4>
-                <p am-time-ago="discussion.createdDate"></p>
-              </div>
-              <div>
-                <md-button class="right md-icon-button" aria-label="Chat" ng-click="home.openChat($event, discussion)">
-                  <md-icon class="accent-icon" >chat</md-icon>
-                </md-button>
+                <p class="user-name">{{discussion.userName}}</p>
+                <p class="item-time" am-time-ago="discussion.createdDate"></p>
               </div>
             </div>
+            <p flex class="multiline serif">{{discussion.content}}</p>
+            <div>
+              <md-button class="right" aria-label="Chat" ng-click="home.openChat($event, discussion)">
+                <md-icon class="accent-icon" >chat</md-icon>
+                <span>Reply</span>
+              </md-button>
+            </div>
             <md-divider></md-divider>
+            </div>
           </md-list-item>
         </md-list>
       </div>
